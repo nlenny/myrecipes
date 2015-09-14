@@ -3,7 +3,7 @@ require 'test_helper'
 class RecipeTest < ActiveSupport::TestCase
   
   def setup
-    @recipe = Recipe.new(names: "peanutsoup", summary: "this is the best peanut soup recipe ever", description: "heat oil, add onions, add tomato sauce, add chicken and ground peanut, cook for 20 minutes")
+    @recipe = Recipe.new(name: "peanutsoup", summary: "this is the best peanut soup recipe ever", description: "heat oil, add onions, add tomato sauce, add chicken and ground peanut, cook for 20 minutes")
   end
   
   test "recipe should be valid" do
@@ -11,17 +11,17 @@ class RecipeTest < ActiveSupport::TestCase
   end
   
   test "name should be valid" do
-    @recipe.names = " "
+    @recipe.name = " "
     assert_not @recipe.valid?
   end
   
   test "name length should not be too long" do
-    @recipe.names = "a" * 101
+    @recipe.name = "a" * 101
     assert_not @recipe.valid?
   end
   
   test "name length should not be too short" do
-    @recipe.names = "aaaa"
+    @recipe.name = "aaaa"
     assert_not @recipe.valid?
   end
   
