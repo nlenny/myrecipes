@@ -12,6 +12,6 @@ class ChefTest < ActiveSupport::TestCase
   
   test "chefname should be present" do
     @chef.chefname = " "
-    assert_not @chef.valid?
+    assert @chef.valid?
   end
 end
